@@ -125,19 +125,6 @@ const Header = () => {
                 </ul>
               </NavigationMenuContent>
             </NavigationMenuItem>
-            {/* <NavigationMenuItem>
-              <NavigationMenuLink asChild>
-                <Link
-                  href='/ressources'
-                  className={cn(
-                    navigationMenuTriggerStyle(),
-                    'bg-yellow-500 text-white hover:bg-yellow-600 hover:text-white'
-                  )}
-                >
-                  Ressources
-                </Link>
-              </NavigationMenuLink>
-            </NavigationMenuItem> */}
             <NavigationMenuItem>
               <NavigationMenuLink asChild>
                 <Link
@@ -164,7 +151,7 @@ const Header = () => {
                 </Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
-            <NavigationMenuItem>
+            {/* <NavigationMenuItem>
               <NavigationMenuLink asChild>
                 <Link
                   href='/contact'
@@ -176,7 +163,7 @@ const Header = () => {
                   Contact
                 </Link>
               </NavigationMenuLink>
-            </NavigationMenuItem>
+            </NavigationMenuItem> */}
           </NavigationMenuList>
         </NavigationMenu>
 
@@ -216,12 +203,16 @@ const Header = () => {
             />
           </button>
 
-          <Button
-            variant='default'
-            className='hidden md:inline-flex gradient-secondary border-0 text-white hover:text-white dark:text-black'
-          >
-            Faire un don
-          </Button>
+          {/* Desktop Donate Button - Now wrapped with Link */}
+          <Link href='/donate'>
+            <Button
+              variant='default'
+              className='hidden md:inline-flex gradient-secondary border-0 text-white hover:text-white dark:text-black'
+            >
+              Faire un don
+            </Button>
+          </Link>
+
           <Button
             variant='ghost'
             size='icon'
@@ -260,15 +251,6 @@ const Header = () => {
                   Activités
                 </Link>
               </li>
-              {/* <li>
-                <Link
-                  href='/ressources'
-                  className='block py-2 px-3 text-lg font-medium bg-yellow-500 text-white hover:bg-yellow-600 hover:text-white rounded-md'
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Ressources
-                </Link>
-              </li> */}
               <li>
                 <Link
                   href='/blog'
@@ -287,7 +269,7 @@ const Header = () => {
                   Magazine
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link
                   href='/contact'
                   className='block py-2 px-3 text-lg font-medium bg-yellow-500 text-white hover:bg-yellow-600 hover:text-white rounded-md'
@@ -295,11 +277,14 @@ const Header = () => {
                 >
                   Contact
                 </Link>
-              </li>
+              </li> */}
               <li className='pt-2'>
-                <Button className='w-full gradient-secondary border-0 text-white hover:text-white'>
-                  Faire un don
-                </Button>
+                {/* Mobile Donate Button - Now wrapped with Link */}
+                <Link href='/donate' onClick={() => setIsMobileMenuOpen(false)}>
+                  <Button className='w-full gradient-secondary border-0 text-white hover:text-white'>
+                    Faire un don
+                  </Button>
+                </Link>
               </li>
             </ul>
           </nav>

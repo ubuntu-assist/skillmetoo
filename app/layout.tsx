@@ -4,6 +4,7 @@ import './globals.css'
 import { ThemeProvider } from '@/components/ui/theme-provider'
 import Header from '@/components/layout/header'
 import Footer from '@/components/layout/footer'
+import WhatsAppFloatingButton from '@/components/layout/whatsapp-floating-button'
 
 const raleway = Raleway({
   subsets: ['latin'],
@@ -29,6 +30,7 @@ export default function RootLayout({
           <Header />
           {children}
           <Footer />
+          <WhatsAppFloatingButton />
         </ThemeProvider>
       </body>
     </html>

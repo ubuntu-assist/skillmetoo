@@ -114,7 +114,6 @@ const Footer = () => {
             <ul className='space-y-3'>
               <FooterLink href='/apropos'>À propos</FooterLink>
               <FooterLink href='/activites'>Nos activités</FooterLink>
-              {/* <FooterLink href='/ressources'>Ressources</FooterLink> */}
               <FooterLink href='/blog'>Blog</FooterLink>
               <FooterLink href='/magazine'>Magazine</FooterLink>
               <FooterLink href='/contact'>Contact</FooterLink>
@@ -159,9 +158,12 @@ const Footer = () => {
               Votre soutien aide à former la prochaine génération de leaders
               africains et à créer un avenir meilleur.
             </p>
-            <Button className='w-full bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-white font-medium border-0'>
-              Faire un don
-            </Button>
+            {/* Donate Button - Now wrapped with Link */}
+            <Link href='/donate'>
+              <Button className='w-full bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-white font-medium border-0'>
+                Faire un don
+              </Button>
+            </Link>
           </div>
         </div>
 
