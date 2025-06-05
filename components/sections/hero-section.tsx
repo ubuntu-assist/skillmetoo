@@ -127,19 +127,14 @@ const HeroSection = () => {
             <div className='flex flex-wrap gap-4 pt-4'>
               {[
                 {
-                  text: 'Faire un don',
+                  text: 'Rejoindre Skillmetoo',
                   className:
                     'bg-yellow-500 hover:bg-yellow-600 text-white border-0',
                 },
                 {
-                  text: 'Rejoindre Skillmetoo',
+                  text: 'Prendre rendez-vous',
                   className:
                     'bg-blue-600 hover:bg-blue-700 text-white border-0',
-                },
-                {
-                  text: 'Prendre rendez-vous',
-                  className: 'border-white text-white hover:bg-white/10',
-                  variant: 'outline',
                 },
               ].map((button, index) => (
                 <Button

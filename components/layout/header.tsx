@@ -14,13 +14,47 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu'
-import { MoonIcon, SunIcon, MenuIcon, X } from 'lucide-react'
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu'
+import { Moon, Sun, Menu, X, ChevronDown } from 'lucide-react'
 import { useTheme } from 'next-themes'
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [currentLanguage, setCurrentLanguage] = useState('fr')
   const { theme, setTheme } = useTheme()
+
+  const languages = [
+    {
+      code: 'fr',
+      name: 'Français',
+      flag: 'https://flagcdn.com/24x18/fr.png',
+      flagAlt: 'France',
+    },
+    {
+      code: 'en',
+      name: 'English',
+      flag: 'https://flagcdn.com/24x18/us.png',
+      flagAlt: 'United States',
+    },
+    {
+      code: 'de',
+      name: 'Deutsch',
+      flag: 'https://flagcdn.com/24x18/de.png',
+      flagAlt: 'United States',
+    },
+  ]
+
+  const handleLanguageChange = (languageCode: string) => {
+    setCurrentLanguage(languageCode)
+    // Add your language switching logic here
+    // e.g., router.push(`/${languageCode}${router.asPath}`)
+  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,6 +70,12 @@ const Header = () => {
       window.removeEventListener('scroll', handleScroll)
     }
   }, [])
+
+  const getCurrentLanguage = () => {
+    return (
+      languages.find((lang) => lang.code === currentLanguage) || languages[0]
+    )
+  }
 
   return (
     <header
@@ -151,23 +191,77 @@ const Header = () => {
                 </Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
-            {/* <NavigationMenuItem>
-              <NavigationMenuLink asChild>
-                <Link
-                  href='/contact'
-                  className={cn(
-                    navigationMenuTriggerStyle(),
-                    'bg-yellow-500 text-white hover:bg-yellow-600 hover:text-white'
-                  )}
-                >
-                  Contact
-                </Link>
-              </NavigationMenuLink>
-            </NavigationMenuItem> */}
           </NavigationMenuList>
         </NavigationMenu>
 
         <div className='flex items-center gap-2'>
+          {/* Language Selector */}
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button
+                variant='ghost'
+                size='sm'
+                className={cn(
+                  'h-10 px-3 rounded-full border transition-all duration-300',
+                  isScrolled
+                    ? 'border-gray-200 dark:border-gray-700 hover:border-blue-500'
+                    : 'border-white/30 hover:border-white/60'
+                )}
+              >
+                <Image
+                  src={getCurrentLanguage().flag}
+                  alt={getCurrentLanguage().flagAlt}
+                  width={20}
+                  height={15}
+                  className='rounded-sm'
+                />
+                <span
+                  className={cn(
+                    'ml-2 text-sm font-medium',
+                    isScrolled
+                      ? 'text-gray-700 dark:text-gray-300'
+                      : 'text-white'
+                  )}
+                >
+                  {getCurrentLanguage().code.toUpperCase()}
+                </span>
+                <ChevronDown
+                  className={cn(
+                    'ml-1 h-3 w-3',
+                    isScrolled
+                      ? 'text-gray-500 dark:text-gray-400'
+                      : 'text-white/80'
+                  )}
+                />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align='end' className='w-40'>
+              {languages.map((language) => (
+                <DropdownMenuItem
+                  key={language.code}
+                  onClick={() => handleLanguageChange(language.code)}
+                  className={cn(
+                    'flex items-center px-3 py-2 cursor-pointer',
+                    currentLanguage === language.code &&
+                      'bg-blue-50 dark:bg-blue-950'
+                  )}
+                >
+                  <Image
+                    src={language.flag}
+                    alt={language.flagAlt}
+                    width={20}
+                    height={15}
+                    className='rounded-sm'
+                  />
+                  <span className='ml-3 text-sm'>{language.name}</span>
+                  {currentLanguage === language.code && (
+                    <div className='ml-auto w-2 h-2 bg-blue-600 rounded-full'></div>
+                  )}
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
+
           {/* Styled Theme Toggle Button */}
           <button
             onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
@@ -185,7 +279,7 @@ const Header = () => {
                 theme === 'dark' ? 'rotate-0' : 'rotate-180 scale-0 opacity-0'
               )}
             >
-              <MoonIcon className='h-6 w-6 text-white' />
+              <Moon className='h-6 w-6 text-white' />
             </div>
             <div
               className={cn(
@@ -193,7 +287,7 @@ const Header = () => {
                 theme === 'dark' ? 'rotate-180 scale-0 opacity-0' : 'rotate-0'
               )}
             >
-              <SunIcon className='h-6 w-6 text-white' />
+              <Sun className='h-6 w-6 text-white' />
             </div>
             <div
               className={cn(
@@ -203,7 +297,7 @@ const Header = () => {
             />
           </button>
 
-          {/* Desktop Donate Button - Now wrapped with Link */}
+          {/* Desktop Donate Button */}
           <Link href='/donate'>
             <Button
               variant='default'
@@ -222,7 +316,7 @@ const Header = () => {
             {isMobileMenuOpen ? (
               <X className='h-6 w-6' />
             ) : (
-              <MenuIcon className='h-6 w-6' />
+              <Menu className='h-6 w-6' />
             )}
           </Button>
         </div>
@@ -269,17 +363,43 @@ const Header = () => {
                   Magazine
                 </Link>
               </li>
-              {/* <li>
-                <Link
-                  href='/contact'
-                  className='block py-2 px-3 text-lg font-medium bg-yellow-500 text-white hover:bg-yellow-600 hover:text-white rounded-md'
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Contact
-                </Link>
-              </li> */}
+
+              {/* Mobile Language Selector */}
+              <li className='pt-2 border-t border-gray-200 dark:border-gray-700'>
+                <div className='px-3 mb-3'>
+                  <p className='text-sm font-medium text-gray-500 dark:text-gray-400 mb-2'>
+                    Langue / Language
+                  </p>
+                  <div className='flex space-x-2'>
+                    {languages.map((language) => (
+                      <button
+                        key={language.code}
+                        onClick={() => {
+                          handleLanguageChange(language.code)
+                          setIsMobileMenuOpen(false)
+                        }}
+                        className={cn(
+                          'flex items-center px-3 py-2 rounded-lg border transition-all',
+                          currentLanguage === language.code
+                            ? 'border-blue-500 bg-blue-50 dark:bg-blue-950'
+                            : 'border-gray-200 dark:border-gray-700 hover:border-blue-300'
+                        )}
+                      >
+                        <Image
+                          src={language.flag}
+                          alt={language.flagAlt}
+                          width={20}
+                          height={15}
+                          className='rounded-sm'
+                        />
+                        <span className='ml-2 text-sm'>{language.name}</span>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </li>
+
               <li className='pt-2'>
-                {/* Mobile Donate Button - Now wrapped with Link */}
                 <Link href='/donate' onClick={() => setIsMobileMenuOpen(false)}>
                   <Button className='w-full gradient-secondary border-0 text-white hover:text-white'>
                     Faire un don
