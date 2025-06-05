@@ -16,16 +16,6 @@ const PromotorSection = () => {
                   height={600}
                   className='rounded-xl'
                 />
-
-                {/* Signature overlay */}
-                <div className='absolute -bottom-6 -right-6 bg-white dark:bg-gray-900 px-4 py-2 rounded-lg shadow-lg'>
-                  <Image
-                    src='/images/signature.webp'
-                    alt='Signature'
-                    width={120}
-                    height={60}
-                  />
-                </div>
               </div>
             </div>
 
@@ -47,11 +37,11 @@ const PromotorSection = () => {
 
             <div className='relative pl-6 border-l-2 border-blue-500 italic text-gray-700 dark:text-gray-300 text-lg'>
               <p className='mb-4'>
-                "Notre mission est de donner aux jeunes africains les moyens de
-                comprendre ce monde en constante évolution et d'y trouver leur
-                place. Chez Skillmetoo, nous croyons fermement que chaque jeune
-                possède un potentiel extraordinaire qui peut être transformé en
-                succès tangible."
+                "Notre mission est de donner aux jeunes les moyens de comprendre
+                ce monde en constante évolution et d'y trouver leur place. Chez
+                Skillmetoo, nous croyons fermement que chaque jeune possède un
+                potentiel extraordinaire qui peut être transformé en succès
+                tangible."
               </p>
               <p>
                 "Notre approche combine formation technique, mentorat
@@ -62,7 +52,7 @@ const PromotorSection = () => {
 
             <div className='pt-4'>
               <h3 className='font-bold text-xl text-gray-900 dark:text-white'>
-                Jean-Paul Kamdem
+                Dr.-Ing. Fabrice Teuma
               </h3>
               <p className='text-gray-600 dark:text-gray-400'>
                 Fondateur & Président, Skillmetoo

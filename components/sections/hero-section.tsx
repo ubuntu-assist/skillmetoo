@@ -30,14 +30,20 @@ const HeroSection = () => {
               isVisible ? 'fade-in' : 'opacity-0'
             }`}
           >
-            <h1 className='font-bold text-5xl md:text-6xl lg:text-7xl leading-tight'>
-              Former. <span className='text-yellow-400'>Informer.</span>{' '}
-              Transformer.
-            </h1>
+            <div className='font-bold text-5xl md:text-6xl lg:text-7xl leading-tight text-center'>
+              <h1>Former.</h1>
+              <div className='text-2xl my-2'>↓</div>
+              <h1>
+                <span className='text-yellow-400'>Informer.</span>
+              </h1>
+              <div className='text-2xl my-2'>↓</div>
+              <h1>Transformer.</h1>
+            </div>
             <p className='text-xl md:text-2xl text-blue-100 font-light max-w-xl'>
-              Nous donnons aux jeunes africains les compétences nécessaires pour
-              comprendre le monde et saisir les opportunités du marché
-              international.
+              Nous donnons aux jeunes les compétences nécessaires pour
+              comprendre les enjeux du monde de demain afin de les préparer à
+              saisir les opportunités futures aussi bien sur le marché local que
+              global.
             </p>
             <div className='flex flex-wrap gap-4 pt-4'>
               <Button className='bg-yellow-500 hover:bg-yellow-600 text-white border-0 h-12 px-6 text-base button-hover'>

@@ -57,7 +57,7 @@ const ActivitiesSection = () => {
           </h2>
           <p className='text-gray-600 dark:text-gray-400 text-lg'>
             Découvrez les différentes façons dont nous accompagnons les jeunes
-            africains dans leur développement professionnel et personnel.
+            dans leur développement professionnel et personnel.
           </p>
         </div>
 

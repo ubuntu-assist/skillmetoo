@@ -53,7 +53,7 @@ const Header = () => {
             alt='Skillmetoo'
             width={180}
             height={40}
-            className='h-14 w-auto'
+            className='h-20 w-auto'
           />
         </Link>
 
@@ -125,7 +125,7 @@ const Header = () => {
                 </ul>
               </NavigationMenuContent>
             </NavigationMenuItem>
-            <NavigationMenuItem>
+            {/* <NavigationMenuItem>
               <NavigationMenuLink asChild>
                 <Link
                   href='/ressources'
@@ -137,7 +137,7 @@ const Header = () => {
                   Ressources
                 </Link>
               </NavigationMenuLink>
-            </NavigationMenuItem>
+            </NavigationMenuItem> */}
             <NavigationMenuItem>
               <NavigationMenuLink asChild>
                 <Link
@@ -260,7 +260,7 @@ const Header = () => {
                   Activités
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link
                   href='/ressources'
                   className='block py-2 px-3 text-lg font-medium bg-yellow-500 text-white hover:bg-yellow-600 hover:text-white rounded-md'
@@ -268,7 +268,7 @@ const Header = () => {
                 >
                   Ressources
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link
                   href='/blog'
