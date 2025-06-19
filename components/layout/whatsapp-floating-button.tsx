@@ -17,10 +17,8 @@ const WhatsAppFloatingButton = () => {
     return () => clearTimeout(timer)
   }, [])
 
-  // WhatsApp phone number - replace with your actual WhatsApp business number
-  const whatsappNumber = '+237123456789'
+  const whatsappNumber = '+33663603893'
 
-  // Pre-filled message
   const defaultMessage =
     "Bonjour Skillmetoo! J'aimerais en savoir plus sur vos programmes de formation."
 

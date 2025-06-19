@@ -125,7 +125,7 @@ export default function AboutPage() {
                   </div>
                   <div>
                     <h3 className='text-xl font-bold text-gray-900 dark:text-white'>
-                      10+
+                      5+
                     </h3>
                     <p className='text-gray-600 dark:text-gray-400'>
                       Années d'expérience
@@ -139,7 +139,7 @@ export default function AboutPage() {
                   ></div>
                 </div>
                 <p className='text-gray-500 dark:text-gray-400 text-sm'>
-                  Plus d'une décennie à transformer des vies à travers l'Afrique
+                  5 années à transformer des vies à travers l'Afrique
                 </p>
               </div>
             </div>
@@ -224,54 +224,191 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className='relative max-w-4xl mx-auto'>
-            {/* Timeline line */}
-            <div className='absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-blue-200 dark:bg-blue-900/50'></div>
+          <div className='space-y-20'>
+            {/* Timeline 1 - Foundation 2020 */}
+            <div className='bg-gray-50 dark:bg-gray-900 rounded-2xl p-8'>
+              <div className='inline-block px-4 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 font-medium text-sm mb-6'>
+                2020
+              </div>
+              <h3 className='text-2xl font-bold mb-4 text-gray-900 dark:text-white'>
+                Les débuts de Skillmetoo -{' '}
+                <span className='text-yellow-500'>"L'Avenir En Confiance"</span>
+              </h3>
+              <p className='text-gray-600 dark:text-gray-300 text-lg mb-8'>
+                Skillmetoo a commencé ses activités dans la ville de Douala le
+                1er novembre 2020 avec pour leitmotif{' '}
+                <strong>"L'Avenir En Confiance"</strong>. Sa première mission
+                est d'orienter les jeunes en fin d'études secondaires et en
+                début des études universitaires de mieux définir leurs projets
+                d'études et professionnels. Le bureau de Douala basé au quartier
+                Bali (capitale économique du Cameroun) est animé par
+                l'ingénieure polytechnicienne Mme Laurie Aban et la chargée
+                d'affaires Mme Julienne Ayienna.
+              </p>
 
-            {/* Timeline events */}
-            <div className='space-y-20'>
-              <TimelineEvent
-                year='2015'
-                title='Création de Skillmetoo'
-                description="Fondation de l'association par Jean-Paul Kamdem avec une vision claire : former les jeunes africains aux compétences du futur."
-                image='/images/about/timeline-1.jpg'
-                position='left'
-              />
-              <TimelineEvent
-                year='2017'
-                title='Premier programme de formation'
-                description='Lancement de notre premier programme de formation en développement web qui a accompagné 50 jeunes talents camerounais.'
-                image='/images/about/timeline-2.jpg'
-                position='right'
-              />
-              <TimelineEvent
-                year='2019'
-                title='Expansion régionale'
-                description="Ouverture de programmes dans 5 pays d'Afrique de l'Ouest et signature de partenariats stratégiques avec des entreprises tech."
-                image='/images/about/timeline-3.jpg'
-                position='left'
-              />
-              <TimelineEvent
-                year='2021'
-                title='Lancement de la plateforme en ligne'
-                description="Création de notre plateforme d'apprentissage en ligne pour rendre nos formations accessibles à tous les jeunes africains."
-                image='/images/about/timeline-4.jpg'
-                position='right'
-              />
-              <TimelineEvent
-                year='2023'
-                title="Prix de l'innovation éducative"
-                description='Récompense internationale pour notre approche innovante de formation et notre impact sur la jeunesse africaine.'
-                image='/images/about/timeline-5.jpg'
-                position='left'
-              />
-              <TimelineEvent
-                year='2025'
-                title='Objectif 10 000 jeunes formés'
-                description="Nous continuons notre expansion avec l'ambition d'atteindre et transformer 10 000 jeunes à travers le continent africain."
-                image='/images/about/timeline-6.jpg'
-                position='right'
-              />
+              {/* 3 images for 2020 */}
+              <div className='grid grid-cols-1 md:grid-cols-3 gap-6 items-start'>
+                <div className='rounded-xl overflow-hidden shadow-md'>
+                  <Image
+                    src='/images/story1.png'
+                    alt='Début de Skillmetoo à Douala'
+                    width={400}
+                    height={300}
+                    className='w-full h-auto'
+                  />
+                </div>
+                <div className='rounded-xl overflow-hidden shadow-md'>
+                  <Image
+                    src='/images/story2.jpg'
+                    alt='Bureau de Bali'
+                    width={400}
+                    height={300}
+                    className='w-full h-auto'
+                  />
+                </div>
+                <div className='rounded-xl overflow-hidden shadow-md'>
+                  <Image
+                    src='/images/story3.png'
+                    alt='Équipe fondatrice'
+                    width={400}
+                    height={300}
+                    className='w-full h-auto'
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Timeline 2 - Relocation 2021 */}
+            <div className='bg-green-50 dark:bg-green-900/10 rounded-2xl p-8'>
+              <div className='inline-block px-4 py-1 rounded-full bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 font-medium text-sm mb-6'>
+                2021
+              </div>
+              <h3 className='text-2xl font-bold mb-4 text-gray-900 dark:text-white'>
+                Relocalisation stratégique à Dschang
+              </h3>
+              <p className='text-gray-600 dark:text-gray-300 text-lg mb-8'>
+                En 2021, pour des raisons stratégiques, toutes les activités
+                sont relocalisées dans la ville universitaire de Dschang.
+                Skillmetoo veut désormais se déployer hors de ses locaux et
+                faire des descentes dans les établissements d'enseignement
+                secondaire et dans les universités et instituts supérieurs.
+              </p>
+              <p className='text-gray-600 dark:text-gray-300 text-lg mb-8'>
+                L'office de Dschang est dirigé par Mr. Barry Berry Smith
+                accompagné d'une équipe très soudée avec des figures dirigeantes
+                comme Martial Makawa, Aude Koagne, Leonel Kelias Tuegno, Bayard
+                Bilim, Leatitia Ndjie, Ulrich Tano, Mbuh Ernest, Marceline
+                Ongongono, Nguimdo Curtis, JP Kenfack, Thomy Kenzo et bien
+                d'autres.
+              </p>
+
+              {/* 1 image for 2021 */}
+              <div className='max-w-2xl mx-auto'>
+                <div className='rounded-xl overflow-hidden shadow-md'>
+                  <Image
+                    src='/images/gallery-img2.png'
+                    alt='Équipe de Dschang dirigée par Barry Berry Smith'
+                    width={600}
+                    height={400}
+                    className='w-full h-auto'
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Timeline 3 - Growth 2022-2024 */}
+            <div className='bg-yellow-50 dark:bg-yellow-900/10 rounded-2xl p-8'>
+              <div className='inline-block px-4 py-1 rounded-full bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-300 font-medium text-sm mb-6'>
+                2022-2024
+              </div>
+              <h3 className='text-2xl font-bold mb-4 text-gray-900 dark:text-white'>
+                Expansion et reconnaissance
+              </h3>
+              <p className='text-gray-600 dark:text-gray-300 text-lg mb-8'>
+                En 2022, la première édition du magazine de Skillmetoo est
+                éditée et distribuée dans les établissements secondaires dans
+                les régions de l'Ouest, du Centre, du Littoral et du Nord
+                Cameroun. Skillmetoo est invité à participer à plusieurs
+                séminaires et conférences entre 2023 et 2024.
+              </p>
+
+              {/* 2 images for 2022-2024 */}
+              <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
+                <div className='rounded-xl overflow-hidden shadow-md'>
+                  <Image
+                    src='/images/story4.jpg'
+                    alt='Premier magazine Skillmetoo'
+                    width={500}
+                    height={300}
+                    className='w-full h-auto'
+                  />
+                </div>
+                <div className='rounded-xl overflow-hidden shadow-md'>
+                  <Image
+                    src='/images/story5.jpg'
+                    alt='Participation aux conférences'
+                    width={500}
+                    height={300}
+                    className='w-full h-auto'
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Timeline 4 - Current 2025 */}
+            <div className='bg-blue-50 dark:bg-blue-900/10 rounded-2xl p-8'>
+              <div className='inline-block px-4 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 font-medium text-sm mb-6'>
+                2025
+              </div>
+              <h3 className='text-2xl font-bold mb-4 text-gray-900 dark:text-white'>
+                Innovation et croissance
+              </h3>
+              <p className='text-gray-600 dark:text-gray-300 text-lg mb-8'>
+                En 2025, Skillmetoo active son redéploiement et s'associe avec
+                la société de média digital Moock pour offrir des formations et
+                un meilleur suivi personnalisé. Skillmetoo lance son incubateur
+                d'entreprise.
+              </p>
+
+              {/* 4 images for 2025 */}
+              <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6'>
+                <div className='rounded-xl overflow-hidden shadow-md'>
+                  <Image
+                    src='/images/story6.jpg'
+                    alt='Partenariat avec Moock'
+                    width={300}
+                    height={250}
+                    className='w-full h-auto'
+                  />
+                </div>
+                <div className='rounded-xl overflow-hidden shadow-md'>
+                  <Image
+                    src='/images/story7.jpg'
+                    alt='Nouvelles formations'
+                    width={300}
+                    height={250}
+                    className='w-full h-auto'
+                  />
+                </div>
+                <div className='rounded-xl overflow-hidden shadow-md'>
+                  <Image
+                    src='/images/story9.jpg'
+                    alt='Lancement incubateur'
+                    width={300}
+                    height={250}
+                    className='w-full h-auto'
+                  />
+                </div>
+                <div className='rounded-xl overflow-hidden shadow-md'>
+                  <Image
+                    src='/images/story8.jpg'
+                    alt='Croissance 2025'
+                    width={300}
+                    height={250}
+                    className='w-full h-auto'
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -294,28 +431,83 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8'>
-            <TeamMember
-              name='Jean-Paul Kamdem'
-              role='Fondateur & Président'
-              image='/images/team/team-1.jpg'
-              bio="Entrepreneur et visionnaire avec plus de 15 ans d'expérience dans l'éducation et le développement de compétences en Afrique."
-            />
-            <TeamMember
-              name='Aïcha Diallo'
-              role='Directrice des Programmes'
-              image='/images/team/team-2.jpg'
-              bio='Experte en conception pédagogique avec un parcours dans des organisations internationales de développement.'
-            />
-            <TeamMember
-              name='Emmanuel Osei'
-              role='Responsable Technique'
-              image='/images/team/team-3.jpg'
-              bio="Ingénieur et formateur spécialisé dans les technologies web et mobiles, passionné par l'innovation éducative."
-            />
+          {/* Team Group Photo */}
+          <div className='max-w-4xl mx-auto mb-12'>
+            <div className='rounded-2xl overflow-hidden shadow-xl'>
+              <Image
+                src='/images/gallery-img2.png'
+                alt='Équipe Skillmetoo'
+                width={800}
+                height={500}
+                className='w-full h-auto'
+              />
+            </div>
           </div>
 
-          <div className='text-center mt-12'>
+          {/* Team Members List */}
+          <div className='bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg'>
+            <h3 className='text-2xl font-bold text-center mb-8 text-gray-900 dark:text-white'>
+              Membres de l'équipe
+            </h3>
+
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
+              <div className='text-center'>
+                <h4 className='text-xl font-bold text-gray-900 dark:text-white mb-2'>
+                  Dr.-Ing. Fabrice Teuma
+                </h4>
+                <p className='text-blue-600 dark:text-blue-400 font-medium'>
+                  Fondateur & Président
+                </p>
+              </div>
+
+              <div className='text-center'>
+                <h4 className='text-xl font-bold text-gray-900 dark:text-white mb-2'>
+                  Leonel Kilias Tuegno
+                </h4>
+                <p className='text-blue-600 dark:text-blue-400 font-medium'>
+                  Membre de l'équipe
+                </p>
+              </div>
+
+              <div className='text-center'>
+                <h4 className='text-xl font-bold text-gray-900 dark:text-white mb-2'>
+                  Barry Berry Smith
+                </h4>
+                <p className='text-blue-600 dark:text-blue-400 font-medium'>
+                  Membre de l'équipe
+                </p>
+              </div>
+
+              <div className='text-center'>
+                <h4 className='text-xl font-bold text-gray-900 dark:text-white mb-2'>
+                  Aude Koagne
+                </h4>
+                <p className='text-blue-600 dark:text-blue-400 font-medium'>
+                  Membre de l'équipe
+                </p>
+              </div>
+
+              <div className='text-center'>
+                <h4 className='text-xl font-bold text-gray-900 dark:text-white mb-2'>
+                  Martial Makawa
+                </h4>
+                <p className='text-blue-600 dark:text-blue-400 font-medium'>
+                  Membre de l'équipe
+                </p>
+              </div>
+
+              <div className='text-center'>
+                <h4 className='text-xl font-bold text-gray-900 dark:text-white mb-2'>
+                  Et bien d'autres...
+                </h4>
+                <p className='text-gray-600 dark:text-gray-400 font-medium'>
+                  Équipe élargie
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* <div className='text-center mt-12'>
             <Link href='/contact'>
               <Button
                 variant='outline'
@@ -324,12 +516,12 @@ export default function AboutPage() {
                 Rejoignez notre équipe
               </Button>
             </Link>
-          </div>
+          </div> */}
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className='py-20 bg-gradient-to-r from-blue-600 to-blue-800 text-white'>
+      {/* <section className='py-20 bg-gradient-to-r from-blue-600 to-blue-800 text-white'>
         <div className='container px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto'>
           <div className='max-w-4xl mx-auto text-center'>
             <h2 className='text-3xl md:text-4xl font-bold mb-6'>
@@ -352,7 +544,7 @@ export default function AboutPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </main>
   )
 }
@@ -389,7 +581,7 @@ const ValueCard = ({
   }
 
   return (
-    <div className='bg-white dark:bg-gray-800 rounded-xl p-8 shadow-md hover:shadow-lg transition-all duration-300 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto'>
+    <div className='bg-white dark:bg-gray-800 rounded-xl p-8 shadow-md hover:shadow-lg transition-all duration-300'>
       <div
         className={`rounded-full w-14 h-14 flex items-center justify-center mb-6 ${getColorClass()}`}
       >
@@ -399,84 +591,6 @@ const ValueCard = ({
         {title}
       </h3>
       <p className='text-gray-600 dark:text-gray-300'>{description}</p>
-    </div>
-  )
-}
-
-const TimelineEvent = ({
-  year,
-  title,
-  description,
-  image,
-  position,
-}: {
-  year: string
-  title: string
-  description: string
-  image: string
-  position: 'left' | 'right'
-}) => {
-  return (
-    <div
-      className={`relative flex items-center justify-between ${
-        position === 'left' ? 'flex-row' : 'flex-row-reverse'
-      } px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto`}
-    >
-      {/* Content */}
-      <div className='w-5/12'>
-        <div className='bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md'>
-          <div className='inline-block px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 font-medium text-sm mb-3'>
-            {year}
-          </div>
-          <h3 className='text-xl font-bold mb-3 text-gray-900 dark:text-white'>
-            {title}
-          </h3>
-          <p className='text-gray-600 dark:text-gray-300'>{description}</p>
-        </div>
-      </div>
-
-      {/* Center dot */}
-      <div className='absolute left-1/2 transform -translate-x-1/2 w-5 h-5 rounded-full bg-blue-600 dark:bg-blue-400 z-10 border-4 border-white dark:border-gray-950'></div>
-
-      {/* Image */}
-      <div className='w-5/12'>
-        <div className='rounded-xl overflow-hidden shadow-md aspect-video'>
-          <Image
-            src={image}
-            alt={title}
-            width={400}
-            height={225}
-            className='w-full h-full object-cover'
-          />
-        </div>
-      </div>
-    </div>
-  )
-}
-
-const TeamMember = ({
-  name,
-  role,
-  image,
-  bio,
-}: {
-  name: string
-  role: string
-  image: string
-  bio: string
-}) => {
-  return (
-    <div className='bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto'>
-      <div className='relative h-60 overflow-hidden'>
-        <Image src={image} alt={name} fill className='object-cover' />
-      </div>
-      <div className='p-6'>
-        <h3 className='text-xl font-bold mb-1 text-gray-900 dark:text-white'>
-          {name}
-        </h3>
-        <p className='text-blue-600 dark:text-blue-400 mb-4'>{role}</p>
-        <p className='text-gray-600 dark:text-gray-300 text-sm'>{bio}</p>
-      </div>
     </div>
   )
 }

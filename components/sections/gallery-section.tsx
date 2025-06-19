@@ -5,10 +5,9 @@ import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog'
-import { VisuallyHidden } from '@radix-ui/react-visually-hidden' // Import VisuallyHidden
+import { VisuallyHidden } from '@radix-ui/react-visually-hidden'
 import { X } from 'lucide-react'
 
-// Gallery data remains unchanged
 const galleryCategories = [
   { id: 'all', label: 'Tous' },
   { id: 'formations', label: 'Formations' },
@@ -71,14 +70,14 @@ const GallerySection = () => {
       : galleryItems.filter((item) => item.category === activeCategory)
 
   return (
-    <section className='py-20 bg-white dark:bg-gray-950'>
+    <section className='py-12 sm:py-16 lg:py-20 bg-white dark:bg-gray-950'>
       <div className='container px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto'>
-        <div className='text-center max-w-3xl mx-auto mb-12'>
-          <h2 className='text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white'>
+        <div className='text-center max-w-3xl mx-auto mb-8 sm:mb-12'>
+          <h2 className='text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 text-gray-900 dark:text-white'>
             Notre{' '}
             <span className='text-blue-600 dark:text-blue-400'>galerie</span>
           </h2>
-          <p className='text-gray-600 dark:text-gray-400 text-lg'>
+          <p className='text-gray-600 dark:text-gray-400 text-base sm:text-lg leading-relaxed px-4'>
             Découvrez en images les moments forts de nos activités et les
             réalisations de nos bénéficiaires.
           </p>
@@ -89,42 +88,67 @@ const GallerySection = () => {
           onValueChange={setActiveCategory}
           className='w-full'
         >
-          <div className='flex justify-center mb-8'>
-            <TabsList className='bg-gray-100 dark:bg-gray-800/50 p-1 rounded-full'>
-              {galleryCategories.map((category) => (
-                <TabsTrigger
-                  key={category.id}
-                  value={category.id}
-                  className='rounded-full px-6 py-2 data-[state=active]:bg-blue-600 data-[state=active]:text-white'
-                >
-                  {category.label}
-                </TabsTrigger>
-              ))}
-            </TabsList>
+          {/* Mobile-first responsive tabs */}
+          <div className='flex justify-center mb-6 sm:mb-8'>
+            <div className='w-full sm:w-auto'>
+              <TabsList className='bg-gray-100 dark:bg-gray-800/50 p-1 rounded-full w-full sm:w-auto grid grid-cols-2 sm:flex sm:inline-flex gap-1 sm:gap-0'>
+                {galleryCategories.map((category) => (
+                  <TabsTrigger
+                    key={category.id}
+                    value={category.id}
+                    className='rounded-full px-3 sm:px-6 py-2 text-xs sm:text-sm font-medium data-[state=active]:bg-blue-600 data-[state=active]:text-white transition-all duration-200 whitespace-nowrap'
+                  >
+                    {category.label}
+                  </TabsTrigger>
+                ))}
+              </TabsList>
+            </div>
           </div>
 
           <TabsContent value={activeCategory} className='mt-0'>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
+            {/* Responsive grid with better mobile handling */}
+            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4 lg:gap-5'>
               {filteredItems.map((item) => (
                 <div
                   key={item.id}
                   className={`
-                    relative overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer group
-                    ${item.size === 'large' ? 'md:col-span-2 row-span-2' : ''}
-                    ${item.size === 'medium' ? 'row-span-1' : ''}
+                    relative overflow-hidden rounded-lg sm:rounded-xl shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer group
+                    ${
+                      item.size === 'large'
+                        ? 'sm:col-span-2 lg:col-span-2 xl:col-span-2 sm:row-span-2'
+                        : ''
+                    }
+                    ${
+                      item.size === 'medium'
+                        ? 'lg:col-span-1 xl:col-span-1'
+                        : ''
+                    }
                   `}
                   onClick={() => setSelectedImage(item.id)}
                 >
-                  <div className='relative aspect-[4/3]'>
+                  <div
+                    className={`
+                    relative 
+                    ${
+                      item.size === 'large'
+                        ? 'aspect-[4/3] sm:aspect-[3/2]'
+                        : 'aspect-[4/3]'
+                    }
+                  `}
+                  >
                     <Image
                       src={item.image}
                       alt={item.title}
                       fill
+                      sizes='(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw'
                       className='object-cover transition-transform duration-500 group-hover:scale-110'
                     />
+                    {/* Responsive overlay */}
                     <div className='absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end'>
-                      <div className='p-4 text-white'>
-                        <h3 className='font-bold'>{item.title}</h3>
+                      <div className='p-3 sm:p-4 text-white w-full'>
+                        <h3 className='font-bold text-sm sm:text-base line-clamp-2'>
+                          {item.title}
+                        </h3>
                       </div>
                     </div>
                   </div>
@@ -134,12 +158,7 @@ const GallerySection = () => {
           </TabsContent>
         </Tabs>
 
-        <div className='mt-12 flex justify-center'>
-          <Button className='bg-blue-600 hover:bg-blue-700 h-12 px-6 button-hover'>
-            Voir toute la galerie
-          </Button>
-        </div>
-
+        {/* Responsive modal */}
         {selectedImage && (
           <ImageModal
             image={galleryItems.find((item) => item.id === selectedImage)!}
@@ -160,27 +179,39 @@ const ImageModal = ({
 }) => {
   return (
     <Dialog open onOpenChange={onClose}>
-      <DialogContent className='max-w-5xl w-[95vw] max-h-[95vh] p-0 overflow-hidden bg-black/95'>
+      <DialogContent className='max-w-7xl w-[98vw] sm:w-[95vw] max-h-[98vh] sm:max-h-[95vh] p-0 overflow-hidden bg-black/95 border-0'>
         <VisuallyHidden>
           <DialogTitle>{image.title}</DialogTitle>
         </VisuallyHidden>
+
+        {/* Responsive close button */}
         <Button
           variant='ghost'
           size='icon'
           onClick={onClose}
-          className='absolute top-2 right-2 z-10 text-white bg-black/50 hover:bg-black/70 rounded-full'
+          className='absolute top-2 sm:top-4 right-2 sm:right-4 z-10 text-white bg-black/50 hover:bg-black/70 rounded-full w-8 h-8 sm:w-10 sm:h-10'
         >
-          <X className='h-5 w-5' />
+          <X className='h-4 w-4 sm:h-5 sm:w-5' />
         </Button>
-        <div className='relative w-full h-[95vh]'>
-          <Image
-            src={image.image}
-            alt={image.title}
-            fill
-            className='object-contain'
-          />
-          <div className='absolute bottom-0 left-0 right-0 bg-black/70 p-4 text-white'>
-            <h3 className='text-xl font-bold'>{image.title}</h3>
+
+        {/* Responsive image container */}
+        <div className='relative w-full h-[98vh] sm:h-[95vh] flex flex-col'>
+          <div className='flex-1 relative'>
+            <Image
+              src={image.image}
+              alt={image.title}
+              fill
+              sizes='98vw'
+              className='object-contain'
+              priority
+            />
+          </div>
+
+          {/* Responsive caption */}
+          <div className='bg-black/70 p-3 sm:p-4 lg:p-6 text-white border-t border-white/10'>
+            <h3 className='text-lg sm:text-xl lg:text-2xl font-bold leading-tight'>
+              {image.title}
+            </h3>
           </div>
         </div>
       </DialogContent>

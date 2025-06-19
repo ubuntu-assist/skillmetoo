@@ -75,7 +75,7 @@ const FaqSection = () => {
               </AccordionItem>
             ))}
           </Accordion>
-
+          {/* 
           <div className='mt-8 text-center'>
             <Link href='/faq'>
               <Button
@@ -86,7 +86,7 @@ const FaqSection = () => {
                 <ArrowRight className='ml-2 h-4 w-4' />
               </Button>
             </Link>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

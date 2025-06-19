@@ -6,10 +6,12 @@ import Image from 'next/image'
 
 const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false)
-  const [currentWordIndex, setCurrentWordIndex] = useState(0)
+  const [currentTextIndex, setCurrentTextIndex] = useState(0)
 
-  const animatedWords = ['Former.', 'Informer.', 'Transformer.']
-  const wordColors = ['text-white', 'text-yellow-400', 'text-green-400']
+  const descriptionTexts = [
+    'Nous donnons aux jeunes compétences nécessaires pour comprendre les enjeux du monde de demain afin de les préparer à saisir les opportunités futures aussi bien sur le marché local que global.',
+    "Il n'est pas seulement question de vous apprendre à pêcher mais beaucoup plus de vous conduire vers les eaux poissonneuses car le succès résulte d'une rencontre fructueuse d'un talent et d'une opportunité.",
+  ]
 
   useEffect(() => {
     setIsVisible(true)
@@ -17,10 +19,10 @@ const HeroSection = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentWordIndex((prev) => (prev + 1) % animatedWords.length)
-    }, 2500)
+      setCurrentTextIndex((prev) => (prev + 1) % descriptionTexts.length)
+    }, 5000) // Change text every 5 seconds
     return () => clearInterval(interval)
-  }, [animatedWords.length])
+  }, [descriptionTexts.length])
 
   return (
     <section className='relative min-h-screen flex items-center pt-20 overflow-hidden'>
@@ -41,44 +43,43 @@ const HeroSection = () => {
               isVisible ? 'fade-in' : 'opacity-0'
             }`}
           >
-            {/* Animated Main Title */}
-            <div className='font-bold text-5xl md:text-6xl lg:text-7xl leading-tight text-center'>
-              <div className='relative h-20 md:h-24 lg:h-28 flex items-center justify-center overflow-hidden'>
-                {animatedWords.map((word, index) => (
-                  <h1
+            {/* Main Title */}
+            <div className='text-center'>
+              <h1 className='font-black text-4xl md:text-5xl lg:text-6xl leading-tight text-yellow-500 mb-8'>
+                Personalized Skilling for Optimum Success
+              </h1>
+            </div>
+
+            {/* Animated Description */}
+            <div className='text-xl md:text-2xl text-blue-100 font-light max-w-xl'>
+              <div className='relative min-h-[350px] sm:min-h-[300px] md:min-h-[260px] lg:min-h-[240px] xl:min-h-[220px]'>
+                {descriptionTexts.map((text, index) => (
+                  <div
                     key={index}
                     className={`
-                      absolute inset-0 flex items-center justify-center font-black
+                      absolute inset-0 flex items-start pt-2
                       transition-all duration-700 ease-in-out transform
-                      ${wordColors[index]}
                       ${
-                        currentWordIndex === index
-                          ? 'translate-y-0 opacity-100 scale-100'
-                          : index < currentWordIndex
-                          ? '-translate-y-full opacity-0 scale-95'
-                          : 'translate-y-full opacity-0 scale-95'
+                        currentTextIndex === index
+                          ? 'translate-y-0 opacity-100'
+                          : index < currentTextIndex
+                          ? '-translate-y-full opacity-0'
+                          : 'translate-y-full opacity-0'
                       }
                     `}
                   >
-                    {word}
-                  </h1>
+                    <div className='text-justify leading-relaxed w-full h-auto'>
+                      {index === 0 ? text : <strong>{text}</strong>}
+                    </div>
+                  </div>
                 ))}
-              </div>
-
-              {/* Subtitle with typewriter effect */}
-              <div className='mt-8 text-lg md:text-xl lg:text-2xl text-blue-100 font-light'>
-                <span className='inline-block animate-typewriter overflow-hidden border-r-2 border-blue-300 whitespace-nowrap'>
-                  Personalized Skilling for Optimum Success
-                </span>
               </div>
             </div>
 
-            {/* Animated description with staggered words */}
-            <div className='text-xl md:text-2xl text-blue-100 font-light  max-w-xl'>
-              <div className='space-y-2 text-justify'>
-                Nous donnons aux jeunes compétences nécessaires pour comprendre
-                les enjeux du monde de demain afin de les préparer à saisir les
-                opportunités futures aussi bien sur le marché local que global.
+            {/* Formula */}
+            <div className='bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20'>
+              <div className='text-lg md:text-xl font-mono text-yellow-400 text-center'>
+                [succès] = [Travail] x [Talents] x [Opportunités]
               </div>
             </div>
 
@@ -110,7 +111,7 @@ const HeroSection = () => {
                     }
                   `}
                   style={{
-                    transitionDelay: `${1200 + index * 100}ms`,
+                    transitionDelay: `${800 + index * 100}ms`,
                   }}
                 >
                   {button.text}
@@ -164,53 +165,6 @@ const HeroSection = () => {
       </div>
 
       <style jsx>{`
-        @keyframes typewriter {
-          from {
-            width: 0;
-          }
-          to {
-            width: 100%;
-          }
-        }
-
-        @keyframes float {
-          0%,
-          100% {
-            transform: translateY(0px) rotate(0deg);
-            opacity: 0.6;
-          }
-          50% {
-            transform: translateY(-15px) rotate(180deg);
-            opacity: 1;
-          }
-        }
-
-        @keyframes float-show {
-          0% {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          20% {
-            opacity: 1;
-          }
-          100% {
-            opacity: 0.6;
-          }
-        }
-
-        .animate-typewriter {
-          animation: typewriter 6s steps(50) infinite alternate;
-        }
-
-        .animate-float {
-          animation: float 4s ease-in-out infinite;
-        }
-
-        .animate-float-show {
-          animation: float-show 1s ease-out forwards,
-            float 4s ease-in-out infinite 1s;
-        }
-
         .fade-in {
           animation: fadeIn 1s ease-out forwards;
         }

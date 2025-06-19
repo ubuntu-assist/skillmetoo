@@ -35,6 +35,12 @@ const PromotorSection = () => {
               <span className='text-yellow-500'>en succès tangible</span>
             </h2>
 
+            <p className='text-lg italic text-gray-600 dark:text-gray-400 leading-relaxed'>
+              Le chômage massif des jeunes est le problème majeur de l'Afrique
+              contemporaine. C'est un véritable fléau qui déstructure et
+              dénature nos valeurs et notre mode de vie.
+            </p>
+
             <div className='relative pl-6 border-l-2 border-blue-500 italic text-gray-700 dark:text-gray-300 text-lg'>
               <p className='mb-4'>
                 "Notre mission est de donner aux jeunes les moyens de comprendre
