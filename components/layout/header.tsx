@@ -127,13 +127,13 @@ const Header = () => {
                       </Link>
                     </NavigationMenuLink>
                   </li>
-                  <ListItem href='/apropos/histoire' title='Notre Histoire'>
+                  <ListItem href='/apropos/#histoire' title='Notre Histoire'>
                     Parcourez les étapes marquantes de notre organisation.
                   </ListItem>
-                  <ListItem href='/apropos/equipe' title="L'Équipe">
+                  <ListItem href='/apropos/#equipe' title="L'Équipe">
                     Rencontrez les personnes qui font vivre Skillmetoo.
                   </ListItem>
-                  <ListItem href='/apropos/impact' title='Notre Impact'>
+                  <ListItem href='/apropos/#impact' title='Notre Impact'>
                     Découvrez comment nous transformons des vies.
                   </ListItem>
                 </ul>
@@ -150,22 +150,22 @@ const Header = () => {
               </NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className='grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-2 bg-white dark:bg-gray-900'>
-                  <ListItem href='/activites/formation' title='Formations'>
+                  <ListItem href='/activites/#formation' title='Formations'>
                     Programmes de développement de compétences.
                   </ListItem>
-                  <ListItem href='/activites/mentorat' title='Mentorat'>
+                  <ListItem href='/activites/#mentorat' title='Mentorat'>
                     Accompagnement personnalisé pour les jeunes.
                   </ListItem>
-                  <ListItem href='/activites/reseautage' title='Réseautage'>
+                  <ListItem href='/activites/#reseautage' title='Réseautage'>
                     Connexions professionnelles et opportunités.
                   </ListItem>
-                  <ListItem href='/activites/incubation' title='Incubation'>
+                  <ListItem href='/activites/#incubation' title='Incubation'>
                     Soutien aux projets innovants.
                   </ListItem>
                 </ul>
               </NavigationMenuContent>
             </NavigationMenuItem>
-            <NavigationMenuItem>
+            {/* <NavigationMenuItem>
               <NavigationMenuLink asChild>
                 <Link
                   href='/blog'
@@ -177,7 +177,7 @@ const Header = () => {
                   Blog
                 </Link>
               </NavigationMenuLink>
-            </NavigationMenuItem>
+            </NavigationMenuItem> */}
             <NavigationMenuItem>
               <NavigationMenuLink asChild>
                 <Link
@@ -345,7 +345,7 @@ const Header = () => {
                   Activités
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link
                   href='/blog'
                   className='block py-2 px-3 text-lg font-medium bg-yellow-500 text-white hover:bg-yellow-600 hover:text-white rounded-md'
@@ -353,7 +353,7 @@ const Header = () => {
                 >
                   Blog
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link
                   href='/magazine'

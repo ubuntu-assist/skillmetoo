@@ -466,47 +466,7 @@ export default function ActivitiesPage() {
           </div>
         </div>
       </section>
-      {/* Testimonial Section */}
-      <section className='py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white'>
-        <div className='container px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto'>
-          <div className='max-w-4xl mx-auto bg-white/10 backdrop-blur-sm rounded-xl p-6 sm:p-8 md:p-12 lg:p-16 shadow-xl'>
-            <div className='flex flex-col md:flex-row gap-6 sm:gap-8 items-center'>
-              <div className='w-32 sm:w-40 md:w-1/3'>
-                <div className='relative h-32 w-32 sm:h-40 sm:w-40 rounded-full overflow-hidden border-4 border-white/30 mx-auto'>
-                  <Image
-                    src='/images/promotor.jpeg'
-                    alt='Ibrahim Sy'
-                    fill
-                    sizes='(max-width: 640px) 128px, 160px'
-                    className='object-cover'
-                  />
-                </div>
-              </div>
-              <div className='md:w-2/3 text-center md:text-left'>
-                <svg
-                  className='h-6 sm:h-8 w-6 sm:w-8 text-white/30 mb-4 mx-auto md:mx-0'
-                  viewBox='0 0 24 24'
-                  fill='currentColor'
-                >
-                  <path d='M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179zm10 0C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179z' />
-                </svg>
-                <p className='text-base sm:text-lg md:text-xl text-white/90 italic mb-6'>
-                  Skillmetoo a été le tournant de ma carrière. Grâce à la
-                  formation en développement web et au programme de mentorat,
-                  j'ai pu décrocher un emploi dans une entreprise internationale
-                  tout en restant au Sénégal. Je suis aujourd'hui fier de
-                  contribuer au développement de mon pays tout en ayant un
-                  impact global.
-                </p>
-                <h3 className='text-lg sm:text-xl font-bold'>Ibrahim Sy</h3>
-                <p className='text-sm sm:text-base text-white/80'>
-                  Développeur Full-Stack, Promo 2023
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+
       {/* CTA Section */}
       <section className='py-12 sm:py-16 lg:py-20 bg-white dark:bg-gray-950'>
         <div className='container px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto'>
@@ -526,7 +486,7 @@ export default function ActivitiesPage() {
                 </Button>
                 <Button
                   variant='outline'
-                  className='border-white text-white hover:bg-white/10 h-12 px-6 sm:px-8 text-base sm:text-lg'
+                  className='border-white text-black hover:text-white hover:bg-white/10 h-12 px-6 sm:px-8 text-base sm:text-lg'
                 >
                   En savoir plus
                 </Button>

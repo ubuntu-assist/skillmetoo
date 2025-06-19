@@ -16,7 +16,7 @@ const activities: Activity[] = [
     title: 'Formation',
     description:
       'Programmes de développement de compétences techniques et soft skills adaptés au marché international.',
-    link: '/activites/formation',
+    link: '/activites/#formation',
     color: 'blue',
     image: '/images/training.png',
   },
@@ -24,7 +24,7 @@ const activities: Activity[] = [
     title: 'Mentorat',
     description:
       'Accompagnement personnalisé par des professionnels expérimentés pour guider les jeunes talents.',
-    link: '/activites/mentorat',
+    link: '/activites/#mentorat',
     color: 'purple',
     image: '/images/mentorship.webp',
   },
@@ -32,7 +32,7 @@ const activities: Activity[] = [
     title: 'Réseautage',
     description:
       "Connexions avec des opportunités professionnelles et création d'un réseau solide.",
-    link: '/activites/reseautage',
+    link: '/activites/#reseautage',
     color: 'green',
     image: '/images/networking.webp',
   },
@@ -40,7 +40,7 @@ const activities: Activity[] = [
     title: 'Incubation',
     description:
       'Soutien aux projets innovants pour transformer les idées en entreprises viables.',
-    link: '/activites/incubation',
+    link: '/activites/#incubation',
     color: 'orange',
     image: '/images/incubation.webp',
   },

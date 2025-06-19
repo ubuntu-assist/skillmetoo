@@ -17,7 +17,7 @@ export default function HomePage() {
       <StatsSection />
       <GallerySection />
       <TestimonialsSection />
-      <BlogSection />
+      {/* <BlogSection /> */}
       {/* <AmbassadorsSection /> */}
       {/* <PartnersSection /> */}
       <NewsletterSection />

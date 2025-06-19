@@ -74,52 +74,11 @@ const HeroSection = () => {
             </div>
 
             {/* Animated description with staggered words */}
-            <div className='text-xl md:text-2xl text-blue-100 font-light max-w-xl'>
-              <div className='space-y-2'>
-                {[
-                  'Nous donnons aux jeunes',
-                  'les compétences nécessaires pour',
-                  'comprendre les enjeux du monde de demain',
-                  'afin de les préparer à saisir',
-                  'les opportunités futures aussi bien',
-                  'sur le marché local que global.',
-                ].map((line, index) => (
-                  <div
-                    key={index}
-                    className={`
-                      transform transition-all duration-700 ease-out
-                      ${
-                        isVisible
-                          ? 'translate-x-0 opacity-100'
-                          : 'translate-x-8 opacity-0'
-                      }
-                    `}
-                    style={{
-                      transitionDelay: `${400 + index * 150}ms`,
-                    }}
-                  >
-                    {line.split(' ').map((word, wordIndex) => (
-                      <span
-                        key={wordIndex}
-                        className={`
-                          inline-block mr-2 transform transition-all duration-500
-                          ${
-                            isVisible
-                              ? 'translate-y-0 opacity-100'
-                              : 'translate-y-4 opacity-0'
-                          }
-                        `}
-                        style={{
-                          transitionDelay: `${
-                            600 + index * 150 + wordIndex * 50
-                          }ms`,
-                        }}
-                      >
-                        {word}
-                      </span>
-                    ))}
-                  </div>
-                ))}
+            <div className='text-xl md:text-2xl text-blue-100 font-light  max-w-xl'>
+              <div className='space-y-2 text-justify'>
+                Nous donnons aux jeunes compétences nécessaires pour comprendre
+                les enjeux du monde de demain afin de les préparer à saisir les
+                opportunités futures aussi bien sur le marché local que global.
               </div>
             </div>
 

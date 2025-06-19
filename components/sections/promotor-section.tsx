@@ -27,7 +27,7 @@ const PromotorSection = () => {
           {/* Text side */}
           <div className='space-y-6'>
             <div className='inline-block px-4 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 font-medium text-sm'>
-              Mot du promoteur
+              Mot du président
             </div>
 
             <h2 className='text-3xl md:text-4xl font-bold text-gray-900 dark:text-white'>

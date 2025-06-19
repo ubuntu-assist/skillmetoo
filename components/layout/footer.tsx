@@ -114,7 +114,7 @@ const Footer = () => {
             <ul className='space-y-3'>
               <FooterLink href='/apropos'>À propos</FooterLink>
               <FooterLink href='/activites'>Nos activités</FooterLink>
-              <FooterLink href='/blog'>Blog</FooterLink>
+              {/* <FooterLink href='/blog'>Blog</FooterLink> */}
               <FooterLink href='/magazine'>Magazine</FooterLink>
               <FooterLink href='/contact'>Contact</FooterLink>
             </ul>
